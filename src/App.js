@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Output from "./small/output";
 
 class App extends Component {
   constructor() {
@@ -32,14 +33,7 @@ class App extends Component {
           value={this.state.input}
         />
         <button onClick={this.handleClick}>Add</button>
-        <div className="output">
-          {this.state.todos.map((todo, index) => (
-            <div className="todo">
-              <div className="todo-text">{todo}</div>
-              <div>x</div>
-            </div>
-          ))}
-        </div>
+        <Output todos={this.state.todos} />
       </div>
     );
   }
