@@ -16,8 +16,9 @@ class App extends Component {
   }
 
   handleChange(event) {
+    let value = event.target.value;
     this.setState(() => {
-      return { input: event.target.value };
+      return { input: value };
     });
   }
 
