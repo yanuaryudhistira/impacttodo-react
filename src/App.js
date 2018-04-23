@@ -4,9 +4,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: [],
+      input: ""
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ input: event.target.value });
   }
 
   handleClick() {
@@ -18,8 +24,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="title">Todo List App</h1>
-        <input className="input" type="text" />
+        <h1 className="title">Todo List App {this.state.input}</h1>
+        <input
+          className="input"
+          type="text"
+          onChange={this.handleChange}
+          value={this.state.input}
+        />
         <button onClick={this.handleClick}>Add</button>
         <div className="output">
           {this.state.todos.map((todo, index) => (
