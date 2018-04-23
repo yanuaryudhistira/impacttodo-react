@@ -11,17 +11,19 @@ class App extends Component {
 
   handleClick() {
     this.setState(prevState => ({
-      todos: prevState.todos.concat("todo")
+      todos: prevState.todos.concat(`todo ${prevState.todos.length}`)
     }));
   }
 
   render() {
     return (
       <div className="container">
-        <h1 className="title">Todo List App {this.state.todos}</h1>
+        <h1 className="title">Todo List App</h1>
         <input className="input" type="text" />
         <button onClick={this.handleClick}>Add</button>
-        <div className="output" />
+        <div className="output">
+          {this.state.todos.map((todo, index) => <div>{todo}</div>)}
+        </div>
       </div>
     );
   }
