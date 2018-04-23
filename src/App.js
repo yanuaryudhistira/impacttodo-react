@@ -10,6 +10,7 @@ class App extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   handleChange(event) {
@@ -18,14 +19,23 @@ class App extends Component {
 
   handleClick() {
     this.setState(prevState => ({
-      todos: prevState.todos.concat(`todo ${prevState.todos.length}`)
+      todos: prevState.todos.concat(prevState.input),
+      input: ""
+    }));
+  }
+
+  deleteTodo(target_index) {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter((todo, index) => index !== target_index)
     }));
   }
 
   render() {
     return (
       <div className="container">
-        <h1 className="title">Todo List App {this.state.input}</h1>
+        <h1 className="title" onClick={this.deleteTodo}>
+          Todo List App{" "}
+        </h1>
         <input
           className="input"
           type="text"
@@ -33,7 +43,7 @@ class App extends Component {
           value={this.state.input}
         />
         <button onClick={this.handleClick}>Add</button>
-        <Output todos={this.state.todos} />
+        <Output todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }

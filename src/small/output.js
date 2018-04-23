@@ -7,7 +7,7 @@ function Output(props) {
       {props.todos.map((todo, index) => (
         <div className="todo">
           <div className="todo-text">{todo}</div>
-          <div>X</div>
+          <div onClick={() => props.deleteTodo(index)}>X</div>
         </div>
       ))}
     </div>
