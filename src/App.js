@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <div className="container">
         <h1 className="title" onClick={this.deleteTodo}>
-          Todo List App{" "}
+          Todo List App
         </h1>
         <input
           className="input"

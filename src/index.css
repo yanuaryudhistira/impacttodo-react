@@ -10,7 +10,7 @@ body {
 
 .input {
   border-color: blue;
-  width: 30%;
+  width: 300px;
   margin-right: 5px;
 }
 
@@ -18,7 +18,7 @@ body {
   border-style: solid;
   border-color: blue;
   height: 300px;
-  width: 30%;
+  width: 300px;
   margin-top: 5px;
   overflow: auto;
 }
