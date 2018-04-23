@@ -22,7 +22,12 @@ class App extends Component {
         <input className="input" type="text" />
         <button onClick={this.handleClick}>Add</button>
         <div className="output">
-          {this.state.todos.map((todo, index) => <div>{todo}</div>)}
+          {this.state.todos.map((todo, index) => (
+            <div className="todo">
+              <div className="todo-text">{todo}</div>
+              <div>x</div>
+            </div>
+          ))}
         </div>
       </div>
     );
