@@ -4,15 +4,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: "a"
+      todos: 0
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState({
-      todos: "b"
-    });
+    this.setState((prevState, props) => ({
+      todos: prevState.todos + 1
+    }));
   }
 
   render() {
