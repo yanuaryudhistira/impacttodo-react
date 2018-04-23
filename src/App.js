@@ -4,14 +4,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: 0
+      todos: []
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState((prevState, props) => ({
-      todos: prevState.todos + 1
+    this.setState(prevState => ({
+      todos: prevState.todos.concat("todo")
     }));
   }
 
