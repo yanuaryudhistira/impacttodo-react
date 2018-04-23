@@ -16,20 +16,30 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({ input: event.target.value });
+    this.setState(() => {
+      return { input: event.target.value };
+    });
   }
 
   handleClick() {
-    this.setState(prevState => ({
-      todos: prevState.todos.concat(prevState.input),
-      input: ""
-    }));
+    if (this.state.input !== "") {
+      this.setState(prevState => {
+        return {
+          todos: prevState.todos.concat(prevState.input),
+          input: ""
+        };
+      });
+    }
   }
 
   deleteTodo(target_index) {
-    this.setState(prevState => ({
-      todos: prevState.todos.filter((todo, index) => index !== target_index)
-    }));
+    this.setState(prevState => {
+      return {
+        todos: prevState.todos.filter((todo, index) => {
+          return index !== target_index;
+        })
+      };
+    });
   }
 
   render() {
