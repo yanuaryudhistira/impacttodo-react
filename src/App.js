@@ -1,64 +1,28 @@
 import React, { Component } from "react";
-
-import Output from "./small/Output";
-import Counter from "./medium/Counter";
+import Home from "./pages/home";
+import TodoList from "./pages/TodoList";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      todos: [],
-      input: ""
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.deleteTodo = this.deleteTodo.bind(this);
-  }
-
-  handleChange(event) {
-    let value = event.target.value;
-    this.setState(() => {
-      return { input: value };
-    });
-  }
-
-  handleClick() {
-    if (this.state.input !== "") {
-      this.setState(prevState => {
-        return {
-          todos: prevState.todos.concat(prevState.input),
-          input: ""
-        };
-      });
-    }
-  }
-
-  deleteTodo(target_index) {
-    this.setState(prevState => {
-      return {
-        todos: prevState.todos.filter((todo, index) => {
-          return index !== target_index;
-        })
-      };
-    });
-  }
-
   render() {
     return (
-      <div className="container">
-        <Counter />
-        <h1 className="title" onClick={this.deleteTodo}>
-          Todo List App
-        </h1>
-        <input
-          className="input"
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.input}
-        />
-        <button onClick={this.handleClick}>Add</button>
-        <Output todos={this.state.todos} deleteTodo={this.deleteTodo} />
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/todolist">Todo List</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+          <Route path="/" component={Home} />
+          <Route path="/todolist" component={TodoList} />
+        </div>
+      </Router>
     );
   }
 }
