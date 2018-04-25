@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Output from "../small/Output";
-import Counter from "../medium/Counter";
 
 class TodoList extends Component {
   constructor() {
@@ -47,9 +46,8 @@ class TodoList extends Component {
   render() {
     return (
       <div className="container">
-        <Counter />
         <h1 className="title" onClick={this.deleteTodo}>
-          Todo List App
+          Todo List
         </h1>
         <input
           className="input"

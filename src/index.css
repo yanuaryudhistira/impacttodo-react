@@ -5,18 +5,18 @@ body {
 }
 
 .title {
-  color: blue;
+  color: red;
 }
 
 .input {
-  border-color: blue;
+  border-color: black;
   width: 300px;
   margin-right: 5px;
 }
 
 .output {
   border-style: solid;
-  border-color: blue;
+  border-color: black;
   height: 300px;
   width: 300px;
   margin-top: 5px;
@@ -24,11 +24,12 @@ body {
 }
 
 .container {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .todo {
   display: flex;
   justify-content: space-between;
   margin: 3px;
+  background-color: gray;
 }
