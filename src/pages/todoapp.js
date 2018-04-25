@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import Output from "../small/Output";
 
 class TodoList extends Component {
@@ -46,9 +45,6 @@ class TodoList extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="title" onClick={this.deleteTodo}>
-          Todo List
-        </h1>
         <input
           className="input"
           type="text"
