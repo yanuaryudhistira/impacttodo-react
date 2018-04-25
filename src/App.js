@@ -8,19 +8,19 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route path="/" component={Home} />
-          <ul class="nav">
-            <li class="li">
+          <ul className="nav">
+            <li className="li">
               <Link to="/">Home</Link>
             </li>
-            <li class="li">
+            <li className="li">
               <Link to="/todolist">Todo-App</Link>
             </li>
-            <li class="li">
+            <li className="li">
               <Link to="/about">About</Link>
             </li>
           </ul>
 
+          <Route path="/" component={Home} />
           <Route path="/todolist" component={TodoList} />
         </div>
       </Router>
